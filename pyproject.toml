@@ -1,0 +1,52 @@
+[project]
+name = "kalshi-information-quality-lab"
+version = "0.1.0"
+description = "Reproducible research on information in prediction markets and public weather forecasts"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "cryptography>=50.0.1",
+    "eccodes==2.48.0",
+    "eccodeslib==2.48.0.26 ; sys_platform != 'win32'",
+    "numpy>=2.5.3",
+    "plotly>=7.0.0",
+]
+
+[project.scripts]
+kiq = "kalshi_information_quality_lab.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11.7,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.30.1",
+    "matplotlib>=3.10.6",
+    "nbconvert>=7.16.6",
+    "pandas>=3.0.5",
+    "pytest>=9.1.1",
+    "ruff>=0.16.6",
+    "ty>=0.0.79",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+extend-exclude = ["outputs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["B905"]
+
+[tool.ty.environment]
+python-version = "3.13"
+
+[tool.ty.terminal]
+error-on-warning = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

@@ -1,0 +1,20 @@
+[project]
+name = "kalshi-information-quality-lab"
+
+[study]
+title = "When do Kalshi prices add information beyond public weather forecasts?"
+hypothesis = "whether_and_when"
+candidate_cities = ["NYC"]
+horizons_hours = [12, 6]
+horizon_anchor = "outcome_window_start"
+protocol_status = "frozen"
+primary_score = "multiclass_brier"
+
+[data]
+mode = "historical"
+root = "data"
+
+[access]
+# This records the local research boundary; it does not grant third-party rights.
+local_research_scope = "documented_local_research"
+evidence_reference = "docs/SOURCES.md"

@@ -1,0 +1,29 @@
+{
+  "data_origin": "calendar_only_algorithm_check",
+  "recorded_at": "2026-09-15T02:58:04.110457+00:00",
+  "seed": 20260914,
+  "calendar_start": "2025-06-01",
+  "calendar_end": "2025-12-31",
+  "algorithm": "role-wide noncircular moving blocks; uniform starts with replacement, truncate to original calendar length",
+  "results": [
+    {
+      "block_days": 3,
+      "attempts": 5000,
+      "empty_june": 0,
+      "july_unique_dates_below20": 2334
+    },
+    {
+      "block_days": 7,
+      "attempts": 5000,
+      "empty_june": 59,
+      "july_unique_dates_below20": 2108
+    },
+    {
+      "block_days": 14,
+      "attempts": 5000,
+      "empty_june": 361,
+      "july_unique_dates_below20": 2035
+    }
+  ],
+  "decision": "Stratify blocks by calendar month within role; original-sample support threshold does not condition bootstrap draws; keep undefined-fit accounting."
+}

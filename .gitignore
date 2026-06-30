@@ -1,0 +1,36 @@
+# Python, tooling, build products
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Local secrets and generated runtime state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+/config/credentials.local.toml
+*.log
+.DS_Store
+
+# Data and generated results are private by default. Publish only reviewed, permitted artifacts.
+/data/*
+!/data/.gitkeep
+/outputs/*
+!/outputs/.gitkeep
+!/outputs/portfolio-readiness/
+/outputs/portfolio-readiness/*
+!/outputs/portfolio-readiness/bootstrap-calendar-check.json
+*.duckdb
+*.duckdb.wal
+*.parquet
+*.sqlite
+*.sqlite3
+.ipynb_checkpoints/

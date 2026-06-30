@@ -1,0 +1,20 @@
+lines.color: adbac7
+patch.edgecolor: adbac7
+text.color: adbac7
+axes.facecolor: 22272e
+axes.edgecolor: adbac7
+axes.labelcolor: adbac7
+xtick.color: adbac7
+ytick.color: adbac7
+legend.framealpha: 0
+grid.color: 768390
+figure.facecolor: 22272e
+figure.edgecolor: 22272e
+savefig.facecolor: 22272e
+savefig.edgecolor: 22272e
+boxplot.boxprops.color: adbac7
+boxplot.capprops.color: adbac7
+boxplot.flierprops.color: adbac7
+boxplot.flierprops.markeredgecolor: adbac7
+boxplot.whiskerprops.color: adbac7
+axes.prop_cycle: cycler('color', ['6cb6ff', 'f69d50', '8ddb8c', 'f47067', 'dcbdfb', '768390'])

@@ -1,0 +1,23 @@
+[project]
+name = "kalshi-information-quality-lab"
+
+[study]
+title = "When do Kalshi prices add information beyond public weather forecasts?"
+hypothesis = "whether_and_when"
+candidate_cities = ["NYC"]
+horizons_hours = [12, 6]
+horizon_anchor = "outcome_window_start"
+protocol_status = "frozen"
+primary_score = "multiclass_brier"
+
+[data]
+# Historical study configuration.
+mode = "historical"
+# Relative to the repository project root, never to this configuration file's directory.
+root = "data"
+
+[access]
+# Records this repository's explicit local research boundary. It does not grant
+# source access, redistribution or publication permission.
+local_research_scope = "documented_local_research"
+evidence_reference = "docs/SOURCES.md"

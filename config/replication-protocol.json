@@ -1,0 +1,176 @@
+{
+  "analysis_class": "exploratory_historical_replication",
+  "blend": "One convex weight fit by paired Brier on selected specification August-March chronological OOF probability vectors; never use in-sample public predictions.",
+  "bootstrap": {
+    "attempts": 5000,
+    "block_days": 7,
+    "interval_levels": [
+      0.95,
+      0.975
+    ],
+    "limitations": [
+      "Conditions on observed calendar-month composition.",
+      "Cuts dependence at month boundaries; few blocks per month at 14 days.",
+      "Approximate finite-sample and model-selection inference, not a coverage theorem.",
+      "Does not represent unknown source revisions."
+    ],
+    "min_valid_fraction": 0.95,
+    "primary_family": "Two horizon-specific trained-minus-public Brier contrasts; 97.5 percent marginal intervals provide approximate Bonferroni family coverage.",
+    "repeat_entire_fit": true,
+    "scheme": "Uniform nonwrapping consecutive calendar blocks with replacement within each stratum, truncate sampled positions to original stratum length, retain original timestamps and integer date multiplicities. Include missing calendar positions; do not bridge gaps.",
+    "seed": 20260914,
+    "sensitivity_block_days": [
+      3,
+      14
+    ],
+    "strata": [
+      "split",
+      "calendar_month"
+    ],
+    "support": "Validate minimum original eligible error-date support before resampling; replicas require positive eligible weight and finite fits, without a minimum unique resampled-date filter."
+  },
+  "collection": {
+    "analysis_class": "exploratory_historical",
+    "availability_policy": "NOAA object LastModified and nominal bulletin time plus 30 minutes must precede checkpoint; decoded reference time must also precede checkpoint. Market candle end must precede checkpoint. Historical per-market rules are assumed applicable to the archived event and are not claimed to be a contemporaneous rules snapshot.",
+    "bootstrap_block_dates": 2,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20250914,
+    "bootstrap_sensitivity_block_dates": [
+      1,
+      3,
+      7
+    ],
+    "end_date": "2026-06-30",
+    "forecast_max_age_hours": 6,
+    "forecast_min_lead_minutes": 30,
+    "forecast_valid_hours": 12,
+    "forecast_valid_start_utc_hour": 12,
+    "horizon_hours": [
+      12,
+      6
+    ],
+    "limitations": [
+      "One city; final development covers approximately ten months and holdout covers spring/early summer.",
+      "Archived availability and rules are reconstructed, not contemporaneous capture.",
+      "Candle midpoints do not establish executable quotes or fills.",
+      "NDFD daytime grid MaxT differs from the station full-day settlement target."
+    ],
+    "market_candle_interval_minutes": 60,
+    "market_max_candle_age_minutes": 60,
+    "market_price_policy": "hourly_close_bid_ask_midpoint_normalized",
+    "outcome_window_start_utc_hour": 5,
+    "residual_std_floor_f": 1.0,
+    "schema_version": "historical_protocol_v1",
+    "scope_reason": "Frozen replication input cohort. Reuse the immutable June-August 2025 panel and acquire September 2025-June 2026 in a separate bounded partition. Model and inference choices are specified by the enclosing historical_replication_v1 protocol.",
+    "series_ticker": "KXHIGHNY",
+    "specified_at": "2026-09-14",
+    "start_date": "2025-06-01",
+    "station_id": "USW00094728",
+    "station_latitude": 40.77898,
+    "station_longitude": -73.96925,
+    "target_policy": "Archived market rules must name Central Park and NWS Climatological Report (Daily). Use each market's expiration_value, reconcile all bin results, and compare against NCEI daily TMAX without excluding score cases based on agreement. Daily window uses EST local standard time; NDFD daytime MaxT is a predictor transformed through training residuals.",
+    "train_end_date": "2025-12-31",
+    "validation_end_date": "2026-03-31"
+  },
+  "conditions": {
+    "contrast": "high_minus_low_of_trained_minus_public_brier",
+    "high_group": "strictly_above_threshold",
+    "min_observed_group_blocks": 5,
+    "min_observed_group_dates": 20,
+    "min_valid_fraction": 0.95,
+    "support_block_days": 7,
+    "threshold": "horizon_specific_august_march_oof_weighted_median",
+    "variable": "l1_public_market_disagreement"
+  },
+  "coverage_policy": "Inventory all395 requested dates and both horizons; retain documented source/eligibility exclusions and compare all methods on identical retained cases. Verify Central Park/NWS rules for every requested event; never pool incompatible target definitions or choose replacement holdout dates from outcomes.",
+  "final_fit_at": "2026-03-31T17:00:00+00:00",
+  "legacy": {
+    "end_date": "2025-08-31",
+    "panel_sha256": "710f55753ba89fae2adf246e77b0a1f4db9736ecec9f3d44006c0b7eb5adb8da",
+    "results_sha256": "33812365c39e4181869ac42c51499b85561b4e70fa1c1b61d8581a9129c64fe6",
+    "run_dir": "outputs/historical-study"
+  },
+  "metrics": {
+    "log_loss_epsilon": 1e-06,
+    "primary": "multiclass_brier",
+    "primary_comparator": "trained_blend_minus_public_only",
+    "required_methods": [
+      "public_only",
+      "market_only",
+      "equal_blend",
+      "trained_blend",
+      "p0_reference"
+    ],
+    "secondary": [
+      "log_loss",
+      "calibration"
+    ]
+  },
+  "models": {
+    "annual_period_days": 365.25,
+    "candidates": [
+      "p0",
+      "p1_lambda_0.1",
+      "p1_lambda_1",
+      "p1_lambda_10"
+    ],
+    "features": [
+      "intercept",
+      "horizon_6h",
+      "training_standardized_maxt",
+      "annual_sine",
+      "annual_cosine"
+    ],
+    "min_original_error_dates": 20,
+    "ridge_lambdas": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "ridge_objective": "weighted_mean_squared_residual_error_plus_lambda_times_nonintercept_coefficient_squared_sum",
+    "scale": "p0_weighted_sample_sd_or_p1_horizon_rms_earlier_available_oof_errors",
+    "std_floor_f": 1.0,
+    "tie_order": [
+      "p0",
+      "p1_lambda_10",
+      "p1_lambda_1",
+      "p1_lambda_0.1"
+    ],
+    "tie_tolerance": 1e-12
+  },
+  "new_start_date": "2025-09-01",
+  "oof": {
+    "cutoff_day": "day_before_prediction_month",
+    "cutoff_utc_hour": 17,
+    "end_month": "2026-03-01",
+    "errors_weight": "prediction_date_multiplicity",
+    "fitting": "expanding_earlier_available_labels",
+    "probabilities_start_month": "2025-08-01",
+    "start_month": "2025-07-01"
+  },
+  "pre_outcome_amendment": {
+    "evidence": "outputs/portfolio-readiness/bootstrap-calendar-check.json",
+    "new_holdout_outcomes_inspected": false,
+    "reason": "Role-wide blocks can omit early fit months; imposing original20distinct-error-date support on resampled multiplicities rejects many otherwise legitimate draws. Stratify by calendar month and separate point-sample support from replicate existence."
+  },
+  "references": [
+    "https://doi.org/10.1214/aos/1176347265",
+    "https://numdam.org/articles/10.1016/S1631-073X(02)02578-5/"
+  ],
+  "schema_version": "historical_replication_v1",
+  "selection": "Freeze each candidate at validation_fit_at for all January-March predictions; choose equal-date/equal-available-horizon Brier on identical cases, then refit selected specification before holdout.",
+  "sensitivities": {
+    "label_substitution": {
+      "outcome_date": "2025-06-02",
+      "scope": "development_labels_only",
+      "temperature_f": 71.0
+    },
+    "normalization": [
+      "proportional",
+      "euclidean_simplex_projection"
+    ]
+  },
+  "specified_at": "2026-09-15T03:00:08.111283+00:00",
+  "validation_fit_at": "2025-12-31T17:00:00+00:00",
+  "weighting": "Equal outcome-date influence, distributed equally over its available horizons; training case frequency weights are 2 divided by distinct eligible horizons times date multiplicity. Complete two-horizon P0 retains v1 sample-SD convention."
+}

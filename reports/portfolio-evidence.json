@@ -1,0 +1,1087 @@
+{
+  "code": {
+    "builder": {
+      "path": "scripts/build_portfolio.py",
+      "sha256": "b5d498c5f512a16c15a54ebb5af49391ff272380e874fb7283f220e2b4a47e9d"
+    },
+    "style": {
+      "path": "config/styles/custom_qb_dark_darien.mplstyle",
+      "sha256": "7cfc24c313a72aba1f59c023c63133ac3b66851e3b95a3b8434e267f5a373424"
+    },
+    "verifier": {
+      "path": "scripts/verify_portfolio.py",
+      "sha256": "af64f6e5e06907d1dfbe90dbb4f90ca6ae574253ad25ea94d1f0298c69a1c635"
+    }
+  },
+  "inputs": {
+    "replication_results": {
+      "analysis_status": "exploratory_historical_replication",
+      "bootstrap": {
+        "family_coverage": "Two horizon-specific trained-minus-public Brier contrasts; 97.5 percent marginal intervals provide approximate Bonferroni family coverage.",
+        "fixed_fit": {
+          "attempted": 5000,
+          "block_days": 7,
+          "conditions": [
+            {
+              "horizon_hours": 12,
+              "interaction": {
+                "ci95": [
+                  -0.12912392620508206,
+                  0.014852336934492113
+                ],
+                "ci975": [
+                  -0.13722803542598497,
+                  0.022344291027953125
+                ],
+                "horizon_hours": 12,
+                "interval_unavailable_reason": null,
+                "mean_difference": -0.05506032966601579,
+                "method": "trained_blend",
+                "metric": "brier",
+                "reference": null,
+                "undefined_replicates": 0,
+                "valid_replicates": 5000
+              },
+              "support": {
+                "groups": {
+                  "high": {
+                    "calendar_blocks": 13,
+                    "dates": 68,
+                    "supported": true
+                  },
+                  "low": {
+                    "calendar_blocks": 9,
+                    "dates": 22,
+                    "supported": true
+                  }
+                },
+                "requirements": {
+                  "anchor": "2026-04-01",
+                  "block_days": 7,
+                  "min_calendar_blocks": 5,
+                  "min_dates": 20
+                },
+                "supported": true
+              },
+              "supported": true
+            },
+            {
+              "horizon_hours": 6,
+              "interaction": {
+                "ci95": null,
+                "ci975": null,
+                "horizon_hours": 6,
+                "interval_unavailable_reason": "insufficient_original_condition_group_support",
+                "mean_difference": -0.10543693452104538,
+                "method": "trained_blend",
+                "metric": "brier",
+                "reference": null,
+                "undefined_replicates": 0,
+                "valid_replicates": 5000
+              },
+              "support": {
+                "groups": {
+                  "high": {
+                    "calendar_blocks": 13,
+                    "dates": 73,
+                    "supported": true
+                  },
+                  "low": {
+                    "calendar_blocks": 8,
+                    "dates": 17,
+                    "supported": false
+                  }
+                },
+                "requirements": {
+                  "anchor": "2026-04-01",
+                  "block_days": 7,
+                  "min_calendar_blocks": 5,
+                  "min_dates": 20
+                },
+                "supported": false
+              },
+              "supported": false
+            }
+          ],
+          "failed": 0,
+          "mode": "fixed_fit_holdout_resampling_only",
+          "primary_comparisons": [
+            {
+              "ci95": [
+                -0.10295974976178322,
+                -0.032586517696877516
+              ],
+              "ci975": [
+                -0.10780154449088994,
+                -0.027381807914779403
+              ],
+              "horizon_hours": 12,
+              "interval_unavailable_reason": null,
+              "mean_difference": -0.07385630462588859,
+              "method": "trained_blend",
+              "metric": "brier",
+              "reference": "public_only",
+              "undefined_replicates": 0,
+              "valid_replicates": 5000
+            },
+            {
+              "ci95": [
+                -0.11646375155506994,
+                -0.02704438703848665
+              ],
+              "ci975": [
+                -0.12297331726651044,
+                -0.02171369360199186
+              ],
+              "horizon_hours": 6,
+              "interval_unavailable_reason": null,
+              "mean_difference": -0.08018826686294801,
+              "method": "trained_blend",
+              "metric": "brier",
+              "reference": "public_only",
+              "undefined_replicates": 0,
+              "valid_replicates": 5000
+            }
+          ],
+          "selection_counts": {},
+          "valid": 5000
+        },
+        "full_refit": {
+          "attempted": 5000,
+          "block_days": 7,
+          "conditions": [
+            {
+              "horizon_hours": 12,
+              "interaction": {
+                "ci95": [
+                  -0.15821574200689947,
+                  -0.004677808693490472
+                ],
+                "ci975": [
+                  -0.16772101896355623,
+                  0.0052471808958865305
+                ],
+                "horizon_hours": 12,
+                "interval_unavailable_reason": null,
+                "mean_difference": -0.05506032966601579,
+                "method": "trained_blend",
+                "metric": "brier",
+                "reference": null,
+                "undefined_replicates": 0,
+                "valid_replicates": 5000
+              },
+              "support": {
+                "groups": {
+                  "high": {
+                    "calendar_blocks": 13,
+                    "dates": 68,
+                    "supported": true
+                  },
+                  "low": {
+                    "calendar_blocks": 9,
+                    "dates": 22,
+                    "supported": true
+                  }
+                },
+                "requirements": {
+                  "anchor": "2026-04-01",
+                  "block_days": 7,
+                  "min_calendar_blocks": 5,
+                  "min_dates": 20
+                },
+                "supported": true
+              },
+              "supported": true
+            },
+            {
+              "horizon_hours": 6,
+              "interaction": {
+                "ci95": null,
+                "ci975": null,
+                "horizon_hours": 6,
+                "interval_unavailable_reason": "insufficient_original_condition_group_support",
+                "mean_difference": -0.10543693452104538,
+                "method": "trained_blend",
+                "metric": "brier",
+                "reference": null,
+                "undefined_replicates": 0,
+                "valid_replicates": 5000
+              },
+              "support": {
+                "groups": {
+                  "high": {
+                    "calendar_blocks": 13,
+                    "dates": 73,
+                    "supported": true
+                  },
+                  "low": {
+                    "calendar_blocks": 8,
+                    "dates": 17,
+                    "supported": false
+                  }
+                },
+                "requirements": {
+                  "anchor": "2026-04-01",
+                  "block_days": 7,
+                  "min_calendar_blocks": 5,
+                  "min_dates": 20
+                },
+                "supported": false
+              },
+              "supported": false
+            }
+          ],
+          "failed": 0,
+          "mode": "full_refit_including_selection_oof_scale_blend_conditions",
+          "primary_comparisons": [
+            {
+              "ci95": [
+                -0.10487864173913461,
+                -0.02559303436743874
+              ],
+              "ci975": [
+                -0.11028161504199774,
+                -0.019122756680623267
+              ],
+              "horizon_hours": 12,
+              "interval_unavailable_reason": null,
+              "mean_difference": -0.07385630462588859,
+              "method": "trained_blend",
+              "metric": "brier",
+              "reference": "public_only",
+              "undefined_replicates": 0,
+              "valid_replicates": 5000
+            },
+            {
+              "ci95": [
+                -0.11816266959773322,
+                -0.015189276026782184
+              ],
+              "ci975": [
+                -0.12618928578567445,
+                -0.007384474650285887
+              ],
+              "horizon_hours": 6,
+              "interval_unavailable_reason": null,
+              "mean_difference": -0.08018826686294801,
+              "method": "trained_blend",
+              "metric": "brier",
+              "reference": "public_only",
+              "undefined_replicates": 0,
+              "valid_replicates": 5000
+            }
+          ],
+          "selection_counts": {
+            "p0": 918,
+            "p1_lambda_0.1": 837,
+            "p1_lambda_1": 2970,
+            "p1_lambda_10": 275
+          },
+          "valid": 5000
+        },
+        "limitations": [
+          "Conditions on observed calendar-month composition.",
+          "Cuts dependence at month boundaries; few blocks per month at 14 days.",
+          "Approximate finite-sample and model-selection inference, not a coverage theorem.",
+          "Does not represent unknown source revisions."
+        ],
+        "sensitivity_by_block_days": {
+          "14": {
+            "attempted": 5000,
+            "block_days": 14,
+            "conditions": [
+              {
+                "horizon_hours": 12,
+                "interaction": {
+                  "ci95": [
+                    -0.14696485953810756,
+                    -0.03459574305567849
+                  ],
+                  "ci975": [
+                    -0.15380418842766697,
+                    -0.025815065416101044
+                  ],
+                  "horizon_hours": 12,
+                  "interval_unavailable_reason": null,
+                  "mean_difference": -0.05506032966601579,
+                  "method": "trained_blend",
+                  "metric": "brier",
+                  "reference": null,
+                  "undefined_replicates": 0,
+                  "valid_replicates": 5000
+                },
+                "support": {
+                  "groups": {
+                    "high": {
+                      "calendar_blocks": 13,
+                      "dates": 68,
+                      "supported": true
+                    },
+                    "low": {
+                      "calendar_blocks": 9,
+                      "dates": 22,
+                      "supported": true
+                    }
+                  },
+                  "requirements": {
+                    "anchor": "2026-04-01",
+                    "block_days": 7,
+                    "min_calendar_blocks": 5,
+                    "min_dates": 20
+                  },
+                  "supported": true
+                },
+                "supported": true
+              },
+              {
+                "horizon_hours": 6,
+                "interaction": {
+                  "ci95": null,
+                  "ci975": null,
+                  "horizon_hours": 6,
+                  "interval_unavailable_reason": "insufficient_original_condition_group_support",
+                  "mean_difference": -0.10543693452104538,
+                  "method": "trained_blend",
+                  "metric": "brier",
+                  "reference": null,
+                  "undefined_replicates": 0,
+                  "valid_replicates": 5000
+                },
+                "support": {
+                  "groups": {
+                    "high": {
+                      "calendar_blocks": 13,
+                      "dates": 73,
+                      "supported": true
+                    },
+                    "low": {
+                      "calendar_blocks": 8,
+                      "dates": 17,
+                      "supported": false
+                    }
+                  },
+                  "requirements": {
+                    "anchor": "2026-04-01",
+                    "block_days": 7,
+                    "min_calendar_blocks": 5,
+                    "min_dates": 20
+                  },
+                  "supported": false
+                },
+                "supported": false
+              }
+            ],
+            "failed": 0,
+            "mode": "full_refit_including_selection_oof_scale_blend_conditions",
+            "primary_comparisons": [
+              {
+                "ci95": [
+                  -0.09605828814441579,
+                  -0.03706515219678874
+                ],
+                "ci975": [
+                  -0.09957053511740571,
+                  -0.03295903377248623
+                ],
+                "horizon_hours": 12,
+                "interval_unavailable_reason": null,
+                "mean_difference": -0.07385630462588859,
+                "method": "trained_blend",
+                "metric": "brier",
+                "reference": "public_only",
+                "undefined_replicates": 0,
+                "valid_replicates": 5000
+              },
+              {
+                "ci95": [
+                  -0.10586851069265298,
+                  -0.028712019917951425
+                ],
+                "ci975": [
+                  -0.11200047528033553,
+                  -0.023611603632401147
+                ],
+                "horizon_hours": 6,
+                "interval_unavailable_reason": null,
+                "mean_difference": -0.08018826686294801,
+                "method": "trained_blend",
+                "metric": "brier",
+                "reference": "public_only",
+                "undefined_replicates": 0,
+                "valid_replicates": 5000
+              }
+            ],
+            "selection_counts": {
+              "p0": 1058,
+              "p1_lambda_0.1": 580,
+              "p1_lambda_1": 3035,
+              "p1_lambda_10": 327
+            },
+            "valid": 5000
+          },
+          "3": {
+            "attempted": 5000,
+            "block_days": 3,
+            "conditions": [
+              {
+                "horizon_hours": 12,
+                "interaction": {
+                  "ci95": [
+                    -0.16008280398314476,
+                    0.012000389319922427
+                  ],
+                  "ci975": [
+                    -0.16830444448761048,
+                    0.023378144226407015
+                  ],
+                  "horizon_hours": 12,
+                  "interval_unavailable_reason": null,
+                  "mean_difference": -0.05506032966601579,
+                  "method": "trained_blend",
+                  "metric": "brier",
+                  "reference": null,
+                  "undefined_replicates": 0,
+                  "valid_replicates": 5000
+                },
+                "support": {
+                  "groups": {
+                    "high": {
+                      "calendar_blocks": 13,
+                      "dates": 68,
+                      "supported": true
+                    },
+                    "low": {
+                      "calendar_blocks": 9,
+                      "dates": 22,
+                      "supported": true
+                    }
+                  },
+                  "requirements": {
+                    "anchor": "2026-04-01",
+                    "block_days": 7,
+                    "min_calendar_blocks": 5,
+                    "min_dates": 20
+                  },
+                  "supported": true
+                },
+                "supported": true
+              },
+              {
+                "horizon_hours": 6,
+                "interaction": {
+                  "ci95": null,
+                  "ci975": null,
+                  "horizon_hours": 6,
+                  "interval_unavailable_reason": "insufficient_original_condition_group_support",
+                  "mean_difference": -0.10543693452104538,
+                  "method": "trained_blend",
+                  "metric": "brier",
+                  "reference": null,
+                  "undefined_replicates": 0,
+                  "valid_replicates": 5000
+                },
+                "support": {
+                  "groups": {
+                    "high": {
+                      "calendar_blocks": 13,
+                      "dates": 73,
+                      "supported": true
+                    },
+                    "low": {
+                      "calendar_blocks": 8,
+                      "dates": 17,
+                      "supported": false
+                    }
+                  },
+                  "requirements": {
+                    "anchor": "2026-04-01",
+                    "block_days": 7,
+                    "min_calendar_blocks": 5,
+                    "min_dates": 20
+                  },
+                  "supported": false
+                },
+                "supported": false
+              }
+            ],
+            "failed": 0,
+            "mode": "full_refit_including_selection_oof_scale_blend_conditions",
+            "primary_comparisons": [
+              {
+                "ci95": [
+                  -0.11496376944576625,
+                  -0.02219712749633842
+                ],
+                "ci975": [
+                  -0.12138481713377584,
+                  -0.016110630264050966
+                ],
+                "horizon_hours": 12,
+                "interval_unavailable_reason": null,
+                "mean_difference": -0.07385630462588859,
+                "method": "trained_blend",
+                "metric": "brier",
+                "reference": "public_only",
+                "undefined_replicates": 0,
+                "valid_replicates": 5000
+              },
+              {
+                "ci95": [
+                  -0.13116536846385998,
+                  -0.016554837909022933
+                ],
+                "ci975": [
+                  -0.13980524334341474,
+                  -0.00918324199575021
+                ],
+                "horizon_hours": 6,
+                "interval_unavailable_reason": null,
+                "mean_difference": -0.08018826686294801,
+                "method": "trained_blend",
+                "metric": "brier",
+                "reference": "public_only",
+                "undefined_replicates": 0,
+                "valid_replicates": 5000
+              }
+            ],
+            "selection_counts": {
+              "p0": 908,
+              "p1_lambda_0.1": 865,
+              "p1_lambda_1": 2978,
+              "p1_lambda_10": 249
+            },
+            "valid": 5000
+          }
+        }
+      },
+      "candidate_validation": [
+        {
+          "candidate": "p0",
+          "cases": 154,
+          "dates": 77,
+          "mean_brier": 0.8244130139262444
+        },
+        {
+          "candidate": "p1_lambda_0.1",
+          "cases": 154,
+          "dates": 77,
+          "mean_brier": 0.8382477029169988
+        },
+        {
+          "candidate": "p1_lambda_1",
+          "cases": 154,
+          "dates": 77,
+          "mean_brier": 0.8139648224686766
+        },
+        {
+          "candidate": "p1_lambda_10",
+          "cases": 154,
+          "dates": 77,
+          "mean_brier": 0.8230665093068391
+        }
+      ],
+      "cohort": {
+        "cases": 652,
+        "dates": 326,
+        "events": 326
+      },
+      "coverage": {
+        "eligible_cases": 652,
+        "excluded_cases": 138,
+        "potential_cases": 790,
+        "requested_dates": 395
+      },
+      "data_quality": {
+        "eligible_cases": 652,
+        "eligible_dates": 326,
+        "excluded_dates": 69,
+        "limitations": [
+          "Missing numeric settlement labels condition analysis on source-complete dates.",
+          "Concentrated autumn/winter missingness reduces seasonal development coverage; resampling does not recover omitted information.",
+          "June 23, 2026 is excluded from holdout because its numeric expiration value is empty."
+        ],
+        "monthly_coverage": [
+          {
+            "excluded": 0,
+            "month": "2025-06",
+            "requested": 30,
+            "usable": 30
+          },
+          {
+            "excluded": 0,
+            "month": "2025-07",
+            "requested": 31,
+            "usable": 31
+          },
+          {
+            "excluded": 0,
+            "month": "2025-08",
+            "requested": 31,
+            "usable": 31
+          },
+          {
+            "excluded": 0,
+            "month": "2025-09",
+            "requested": 30,
+            "usable": 30
+          },
+          {
+            "excluded": 1,
+            "month": "2025-10",
+            "requested": 31,
+            "usable": 30
+          },
+          {
+            "excluded": 26,
+            "month": "2025-11",
+            "requested": 30,
+            "usable": 4
+          },
+          {
+            "excluded": 29,
+            "month": "2025-12",
+            "requested": 31,
+            "usable": 2
+          },
+          {
+            "excluded": 12,
+            "month": "2026-01",
+            "requested": 31,
+            "usable": 19
+          },
+          {
+            "excluded": 0,
+            "month": "2026-02",
+            "requested": 28,
+            "usable": 28
+          },
+          {
+            "excluded": 0,
+            "month": "2026-03",
+            "requested": 31,
+            "usable": 31
+          },
+          {
+            "excluded": 0,
+            "month": "2026-04",
+            "requested": 30,
+            "usable": 30
+          },
+          {
+            "excluded": 0,
+            "month": "2026-05",
+            "requested": 31,
+            "usable": 31
+          },
+          {
+            "excluded": 1,
+            "month": "2026-06",
+            "requested": 30,
+            "usable": 29
+          }
+        ],
+        "panel_file_sha256": "0388149dc4b04adccad1dff9fcb2cb96e84be79499b14899fd39d225a0d84e16",
+        "record_path": "outputs/historical-replication/data-quality.json",
+        "record_sha256": "8c114b9e8fb3cdfc7d4899b499a44618699506ded0a80771f4f33d2c7f8cf781",
+        "requested_dates": 395,
+        "target_rules_compatible_dates": 395
+      },
+      "fit": {
+        "final_fit_at": "2026-03-31T17:00:00+00:00",
+        "oof": {
+          "blend_prediction_cases": 348,
+          "blend_prediction_dates": 174,
+          "blend_prediction_end_date": "2026-03-30",
+          "blend_prediction_start_date": "2025-08-01",
+          "error_fold_end_month": "2026-03-01",
+          "error_fold_start_month": "2025-07-01",
+          "fit_count": 9,
+          "prediction_count": 410,
+          "spec": "p1"
+        },
+        "selected_candidate": "p1_lambda_1",
+        "trained_market_weight": 1.0,
+        "validation_fit_at": "2025-12-31T17:00:00+00:00"
+      },
+      "holdout": [
+        {
+          "cases": 90,
+          "dates": 90,
+          "horizon_hours": 12,
+          "scores": {
+            "equal_blend": {
+              "brier": 0.7115614037300568,
+              "log_loss": 1.4335410694404502
+            },
+            "market_only": {
+              "brier": 0.6939115500641683,
+              "log_loss": 1.3565038696378149
+            },
+            "p0_reference": {
+              "brier": 0.7759416431870894,
+              "log_loss": 1.6248095555777533
+            },
+            "public_only": {
+              "brier": 0.7677678546900569,
+              "log_loss": 1.602368876167657
+            },
+            "trained_blend": {
+              "brier": 0.6939115500641683,
+              "log_loss": 1.3565038696378149
+            }
+          },
+          "trained_minus_public_brier": {
+            "ci95": [
+              -0.10487864173913461,
+              -0.02559303436743874
+            ],
+            "ci975": [
+              -0.11028161504199774,
+              -0.019122756680623267
+            ],
+            "horizon_hours": 12,
+            "interval_support": {
+              "attempted": 5000,
+              "failed": 0,
+              "intervals": [
+                {
+                  "attempted": 5000,
+                  "confidence": 0.95,
+                  "failed": 0,
+                  "interval": [
+                    -0.10487864173913461,
+                    -0.02559303436743874
+                  ],
+                  "min_valid_fraction": 0.95,
+                  "unavailable_reason": null,
+                  "valid": 5000,
+                  "valid_fraction": 1.0
+                },
+                {
+                  "attempted": 5000,
+                  "confidence": 0.975,
+                  "failed": 0,
+                  "interval": [
+                    -0.11028161504199774,
+                    -0.019122756680623267
+                  ],
+                  "min_valid_fraction": 0.95,
+                  "unavailable_reason": null,
+                  "valid": 5000,
+                  "valid_fraction": 1.0
+                }
+              ],
+              "min_valid_fraction": 0.95,
+              "valid": 5000,
+              "valid_fraction": 1.0
+            },
+            "interval_unavailable_reason": null,
+            "mean_difference": -0.07385630462588859,
+            "method": "trained_blend",
+            "metric": "brier",
+            "primary": true,
+            "reference": "public_only",
+            "undefined_replicates": 0,
+            "valid_replicates": 5000
+          }
+        },
+        {
+          "cases": 90,
+          "dates": 90,
+          "horizon_hours": 6,
+          "scores": {
+            "equal_blend": {
+              "brier": 0.6949659324740605,
+              "log_loss": 1.3679544759849305
+            },
+            "market_only": {
+              "brier": 0.6814848212269722,
+              "log_loss": 1.2795891230274166
+            },
+            "p0_reference": {
+              "brier": 0.772756671051035,
+              "log_loss": 1.6154627743847707
+            },
+            "public_only": {
+              "brier": 0.7616730880899202,
+              "log_loss": 1.5877305966583548
+            },
+            "trained_blend": {
+              "brier": 0.6814848212269722,
+              "log_loss": 1.2795891230274166
+            }
+          },
+          "trained_minus_public_brier": {
+            "ci95": [
+              -0.11816266959773322,
+              -0.015189276026782184
+            ],
+            "ci975": [
+              -0.12618928578567445,
+              -0.007384474650285887
+            ],
+            "horizon_hours": 6,
+            "interval_support": {
+              "attempted": 5000,
+              "failed": 0,
+              "intervals": [
+                {
+                  "attempted": 5000,
+                  "confidence": 0.95,
+                  "failed": 0,
+                  "interval": [
+                    -0.11816266959773322,
+                    -0.015189276026782184
+                  ],
+                  "min_valid_fraction": 0.95,
+                  "unavailable_reason": null,
+                  "valid": 5000,
+                  "valid_fraction": 1.0
+                },
+                {
+                  "attempted": 5000,
+                  "confidence": 0.975,
+                  "failed": 0,
+                  "interval": [
+                    -0.12618928578567445,
+                    -0.007384474650285887
+                  ],
+                  "min_valid_fraction": 0.95,
+                  "unavailable_reason": null,
+                  "valid": 5000,
+                  "valid_fraction": 1.0
+                }
+              ],
+              "min_valid_fraction": 0.95,
+              "valid": 5000,
+              "valid_fraction": 1.0
+            },
+            "interval_unavailable_reason": null,
+            "mean_difference": -0.08018826686294801,
+            "method": "trained_blend",
+            "metric": "brier",
+            "primary": true,
+            "reference": "public_only",
+            "undefined_replicates": 0,
+            "valid_replicates": 5000
+          }
+        }
+      ],
+      "input_panel_sha256": "c4c6786480a7dfb4a77e8eec55e60d8319224c452347e6f6f27d9a2d37d336ff",
+      "input_protocol_sha256": "e3c0127ad12baf68b4c6710debb618d71e536f67cd38978a23728936ad292562",
+      "panel_path": "outputs/historical-replication/panel.json",
+      "result_file_sha256": "9f9a8ce0a96849300b8a054dfd23ab4b94c29d243ad2b55a78ecf7825a5bc6a8",
+      "result_path": "outputs/historical-replication/analysis/historical-results.json",
+      "schema_version": "historical_replication_evaluation_v1",
+      "sensitivities": {
+        "label_substitution": {
+          "status": "evaluated",
+          "trained_blend_brier_deltas": [
+            {
+              "difference_from_primary": 0.0,
+              "horizon_hours": 12
+            },
+            {
+              "difference_from_primary": 0.0,
+              "horizon_hours": 6
+            }
+          ]
+        },
+        "normalization_projection": {
+          "status": "evaluated",
+          "trained_blend_brier_deltas": [
+            {
+              "difference_from_primary": -0.002016040804909025,
+              "horizon_hours": 12
+            },
+            {
+              "difference_from_primary": 0.00034822506932419284,
+              "horizon_hours": 6
+            }
+          ]
+        }
+      },
+      "status": "included",
+      "study_window": {
+        "end_date": "2026-06-30",
+        "start_date": "2025-06-01",
+        "train_end_date": "2025-12-31",
+        "validation_end_date": "2026-03-31"
+      }
+    }
+  },
+  "output": {
+    "figures": {
+      "holdout-losses": {
+        "data": [
+          {
+            "dates": 90,
+            "horizon_hours": 12,
+            "scores": {
+              "equal_blend": 0.7115614037300568,
+              "market_only": 0.6939115500641683,
+              "p0_reference": 0.7759416431870894,
+              "public_only": 0.7677678546900569,
+              "trained_blend": 0.6939115500641683
+            }
+          },
+          {
+            "dates": 90,
+            "horizon_hours": 6,
+            "scores": {
+              "equal_blend": 0.6949659324740605,
+              "market_only": 0.6814848212269722,
+              "p0_reference": 0.772756671051035,
+              "public_only": 0.7616730880899202,
+              "trained_blend": 0.6814848212269722
+            }
+          }
+        ],
+        "data_sha256": "f1560b17a995e00792a96ee988e4ea234574ff51eb5dc375b278cb75ff74d3f4",
+        "path": "reports/assets/holdout-losses.png",
+        "renderer": "matplotlib",
+        "renderer_version": "3.11.1",
+        "sha256": "7cb20767fb947746762c03aa331eb1ed9ad90334fd0b2c587cfca5a0afab632c",
+        "source_result_sha256": "9f9a8ce0a96849300b8a054dfd23ab4b94c29d243ad2b55a78ecf7825a5bc6a8"
+      },
+      "monthly-coverage": {
+        "data": [
+          {
+            "excluded": 0,
+            "month": "2025-06",
+            "requested": 30,
+            "usable": 30
+          },
+          {
+            "excluded": 0,
+            "month": "2025-07",
+            "requested": 31,
+            "usable": 31
+          },
+          {
+            "excluded": 0,
+            "month": "2025-08",
+            "requested": 31,
+            "usable": 31
+          },
+          {
+            "excluded": 0,
+            "month": "2025-09",
+            "requested": 30,
+            "usable": 30
+          },
+          {
+            "excluded": 1,
+            "month": "2025-10",
+            "requested": 31,
+            "usable": 30
+          },
+          {
+            "excluded": 26,
+            "month": "2025-11",
+            "requested": 30,
+            "usable": 4
+          },
+          {
+            "excluded": 29,
+            "month": "2025-12",
+            "requested": 31,
+            "usable": 2
+          },
+          {
+            "excluded": 12,
+            "month": "2026-01",
+            "requested": 31,
+            "usable": 19
+          },
+          {
+            "excluded": 0,
+            "month": "2026-02",
+            "requested": 28,
+            "usable": 28
+          },
+          {
+            "excluded": 0,
+            "month": "2026-03",
+            "requested": 31,
+            "usable": 31
+          },
+          {
+            "excluded": 0,
+            "month": "2026-04",
+            "requested": 30,
+            "usable": 30
+          },
+          {
+            "excluded": 0,
+            "month": "2026-05",
+            "requested": 31,
+            "usable": 31
+          },
+          {
+            "excluded": 1,
+            "month": "2026-06",
+            "requested": 30,
+            "usable": 29
+          }
+        ],
+        "data_sha256": "298be3c7358f25e1544e266086f804c6974af5c184c4f65db432c0cd55378da2",
+        "path": "reports/assets/monthly-coverage.png",
+        "renderer": "matplotlib",
+        "renderer_version": "3.11.1",
+        "sha256": "80fa89d7a4a9b07fb69f2dfb6723d92086cabff5bf1a798f720bbdc5fedadac8",
+        "source_result_sha256": "9f9a8ce0a96849300b8a054dfd23ab4b94c29d243ad2b55a78ecf7825a5bc6a8"
+      },
+      "paired-differences": {
+        "data": [
+          {
+            "ci95": [
+              -0.10487864173913461,
+              -0.02559303436743874
+            ],
+            "ci975": [
+              -0.11028161504199774,
+              -0.019122756680623267
+            ],
+            "dates": 90,
+            "horizon_hours": 12,
+            "mean_difference": -0.07385630462588859
+          },
+          {
+            "ci95": [
+              -0.11816266959773322,
+              -0.015189276026782184
+            ],
+            "ci975": [
+              -0.12618928578567445,
+              -0.007384474650285887
+            ],
+            "dates": 90,
+            "horizon_hours": 6,
+            "mean_difference": -0.08018826686294801
+          }
+        ],
+        "data_sha256": "eeb7b393f35f046472d84d979666fd688f8595c2da7dc7d599234de660bbfac3",
+        "path": "reports/assets/paired-differences.png",
+        "renderer": "matplotlib",
+        "renderer_version": "3.11.1",
+        "sha256": "46a5c33d8233d051828104ae1f3d0c812b0d3beef310dc13930c15c3298fb00e",
+        "source_result_sha256": "9f9a8ce0a96849300b8a054dfd23ab4b94c29d243ad2b55a78ecf7825a5bc6a8"
+      }
+    },
+    "index": {
+      "path": "reports/index.html",
+      "sha256": "8fb2ad4a0851cc7581c04df805c7d1fac6e2b9d2073b2e05c7a85a50c22d838c"
+    },
+    "report": {
+      "path": "reports/report.md",
+      "sha256": "51e8516903538717a0473feae35e749922e6087e0ef19330bcb7046bfd3bfe45"
+    },
+    "stylesheet": {
+      "path": "reports/assets/site.css",
+      "sha256": "d25b1ab30488cba7710f7ffd366cc6e7415664c076fa032a2301718ce02a6dad"
+    }
+  },
+  "schema_version": "portfolio_evidence_v2",
+  "study": "empirical_historical_weather_comparison"
+}
